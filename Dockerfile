@@ -1,5 +1,6 @@
 #Stage 1 - Install dependencies and build the app in a build environment
 FROM ubuntu:20.04
+ARG DEBIAN_FRONTEND=noninteractive
 # Install flutter dependencies
 RUN apt-get update
 RUN apt-get install -y curl git wget unzip libgconf-2-4 gdb libstdc++6 libglu1-mesa fonts-droid-fallback lib32stdc++6 python3 sed
