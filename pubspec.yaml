@@ -36,6 +36,7 @@ dependencies:
   flutter_svg: ^1.1.6
   font_awesome_flutter: ^10.3.0
   material_color_generator: ^1.1.0
+  url_launcher: ^6.1.7
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -67,6 +68,6 @@ flutter:
       fonts:
         - asset: fonts/slkscre.ttf
           weight: 700
-    - family:  MyFlutterApp
+    - family: MyFlutterApp
       fonts:
         - asset: fonts/MyFlutterApp.ttf

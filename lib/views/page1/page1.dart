@@ -1,11 +1,11 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:landing_page/common/Colors.dart';
 import 'package:landing_page/common/custom_icon.dart';
 import 'package:landing_page/views/video_player.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({Key? key}) : super(key: key);
@@ -76,7 +76,9 @@ class _Page1State extends State<Page1> {
                       color: Colors.white,
                       padding: const EdgeInsets.all(0.0),
                       iconSize: 25,
-                      onPressed: (() {}),
+                      onPressed: (() async {
+                        await launchUrl(Uri.parse("https://twitter.com/_faefolk"));
+                      }),
                       icon: const FaIcon(FontAwesomeIcons.twitter)),
                 ),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
@@ -90,7 +92,9 @@ class _Page1State extends State<Page1> {
                       color: Colors.white,
                       padding: const EdgeInsets.all(0.0),
                       iconSize: 25,
-                      onPressed: (() {}),
+                      onPressed: (() async {
+                        await launchUrl(Uri.parse("https://discord.gg/Fe5qYRZrGp"));
+                      }),
                       icon: const Icon(discord)),
                 ),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
@@ -104,7 +108,9 @@ class _Page1State extends State<Page1> {
                       color: Colors.white,
                       padding: const EdgeInsets.all(0.0),
                       iconSize: 25,
-                      onPressed: (() {}),
+                      onPressed: (() async {
+                        await launchUrl(Uri.parse("https://medium.com/faefolk/what-is-faefolk-80590ec02a0a"));
+                      }),
                       icon: const Icon(medium_m)),
                 ),
               ],
