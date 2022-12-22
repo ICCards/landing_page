@@ -60,8 +60,7 @@ class _Page1State extends State<Page1> {
 
   @override
   Widget build(BuildContext context) {
-    return FractionallySizedBox(
-      widthFactor: 1,
+    return SizedBox(
       child: Stack(
         children: [
            _customVideoPlayerController != null ? CustomVideoPlayer(
@@ -123,8 +122,7 @@ class _Page1State extends State<Page1> {
             ),
           ),
           Center(
-            child: FractionallySizedBox(
-              heightFactor: 1,
+            child: SizedBox(
               child:Expanded(child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
