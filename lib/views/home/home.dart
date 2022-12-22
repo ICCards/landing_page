@@ -8,16 +8,12 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 1000,
-      width: double.infinity,
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
         child: Column(children: const[
           Page1(),
           Page2(),
           Page3()
         ],),
-      ),
-    );
+      );
   }
 }

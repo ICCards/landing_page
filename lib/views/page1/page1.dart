@@ -60,8 +60,8 @@ class _Page1State extends State<Page1> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Stack(
+    return LayoutBuilder(
+      builder: (context, contraints) => Stack(
         children: [
            _customVideoPlayerController != null ? CustomVideoPlayer(
             customVideoPlayerController: _customVideoPlayerController!,
@@ -123,7 +123,7 @@ class _Page1State extends State<Page1> {
           ),
           Center(
             child: SizedBox(
-              child:Expanded(child: Column(
+              child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Padding(padding: EdgeInsets.symmetric(vertical: 100)),
@@ -170,7 +170,7 @@ class _Page1State extends State<Page1> {
                   ),
                 ),
               ],
-            )) ,),
+            ) ,),
           )
         ],
       ),
