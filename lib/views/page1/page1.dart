@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:landing_page/common/Colors.dart';
+import 'package:landing_page/common/Constants.dart';
 import 'package:landing_page/common/custom_icon.dart';
 import 'package:landing_page/views/video_player.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -146,7 +147,9 @@ class _Page1State extends State<Page1> {
                       elevation: 20,
                       side: BorderSide(color: thirdColor, width: 5),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      downloadFile(getGameLink());
+                    },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: const [
