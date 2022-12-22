@@ -127,11 +127,12 @@ class _Page1State extends State<Page1> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Padding(padding: EdgeInsets.symmetric(vertical: 100)),
-                Image(
-                  image: AssetImage(textLogo),
+                SizedBox(
                   width: 600,
+                  child: Image(
+                  image: AssetImage(textLogo),
                   fit: BoxFit.fill,
-                ),
+                ),),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 50)),
                 Player(
                   videoUrl: cave,
