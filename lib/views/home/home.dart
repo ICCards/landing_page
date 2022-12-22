@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height,
+      height: 1000,
       width: double.infinity,
       child: SingleChildScrollView(
         child: Column(children: const[
