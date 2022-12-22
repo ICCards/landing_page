@@ -6,7 +6,7 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
+      //height: double.infinity,
       width: double.infinity,
       color: Colors.green,
     );

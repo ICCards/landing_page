@@ -16,7 +16,7 @@ class Page1 extends StatefulWidget {
 
 class _Page1State extends State<Page1> {
   late VideoPlayerController videoPlayerController;
-  late CustomVideoPlayerController _customVideoPlayerController;
+  CustomVideoPlayerController? _customVideoPlayerController;
   String bg =
       "https://faefolk.nyc3.cdn.digitaloceanspaces.com/Media/Videos/overworld.mov";
   String cave =
@@ -27,7 +27,15 @@ class _Page1State extends State<Page1> {
   void initState() {
     super.initState();
     videoPlayerController = VideoPlayerController.network(bg)
-      ..initialize().then((value) => setState(() {}));
+      ..initialize().then((value) => {
+        setState(() {
+          
+        }),
+        Timer(const Duration(milliseconds:500 ), () {
+          videoPlayerController.play();
+        })
+      });
+      videoPlayerController.setVolume(0);
     _customVideoPlayerController = CustomVideoPlayerController(
         context: context,
         videoPlayerController: videoPlayerController,
@@ -41,14 +49,12 @@ class _Page1State extends State<Page1> {
             controlBarAvailable: false,
             settingsButtonAvailable: false));
     videoPlayerController.setLooping(true);
-    Timer(const Duration(milliseconds:500 ), () {
-      videoPlayerController.play();
-    });
+    
   }
 
   @override
   void dispose() {
-    _customVideoPlayerController.dispose();
+    _customVideoPlayerController?.dispose();
     super.dispose();
   }
 
@@ -58,9 +64,9 @@ class _Page1State extends State<Page1> {
       width: MediaQuery.of(context).size.width,
       child: Stack(
         children: [
-          CustomVideoPlayer(
-            customVideoPlayerController: _customVideoPlayerController,
-          ),
+           _customVideoPlayerController != null ? CustomVideoPlayer(
+            customVideoPlayerController: _customVideoPlayerController!,
+          ):Container(),
           Padding(
             padding: const EdgeInsets.only(right: 50, top: 50),
             child: Row(
@@ -117,55 +123,53 @@ class _Page1State extends State<Page1> {
             ),
           ),
           Center(
-            child: Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Padding(padding: EdgeInsets.symmetric(vertical: 100)),
-                  Image(
-                    image: AssetImage(textLogo),
-                    width: 600,
-                    fit: BoxFit.fill,
-                  ),
-                  const Padding(padding: EdgeInsets.symmetric(vertical: 50)),
-                  Player(
-                    videoUrl: cave,
-                  ),
-                  const Padding(padding: EdgeInsets.symmetric(vertical: 25)),
-                  SizedBox(
-                    height: 70,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shadowColor: secondaryColor,
-                        elevation: 20,
-                        side: BorderSide(color: thirdColor, width: 5),
-                      ),
-                      onPressed: () {},
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: const [
-                          Text(
-                            'Play Now',
-                            style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ), // <-- Text
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Icon(
-                            // <-- Icon
-                            Icons.videogame_asset,
-                            size: 45.0,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Padding(padding: EdgeInsets.symmetric(vertical: 100)),
+                Image(
+                  image: AssetImage(textLogo),
+                  width: 600,
+                  fit: BoxFit.fill,
+                ),
+                const Padding(padding: EdgeInsets.symmetric(vertical: 50)),
+                Player(
+                  videoUrl: cave,
+                ),
+                const Padding(padding: EdgeInsets.symmetric(vertical: 25)),
+                SizedBox(
+                  height: 70,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shadowColor: secondaryColor,
+                      elevation: 20,
+                      side: BorderSide(color: thirdColor, width: 5),
+                    ),
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Text(
+                          'Play Now',
+                          style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white),
+                        ), // <-- Text
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(
+                          // <-- Icon
+                          Icons.videogame_asset,
+                          size: 45.0,
+                          color: Colors.white,
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           )
         ],
