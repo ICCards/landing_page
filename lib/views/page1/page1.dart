@@ -123,7 +123,9 @@ class _Page1State extends State<Page1> {
             ),
           ),
           Center(
-            child: Column(
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child:Expanded(child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Padding(padding: EdgeInsets.symmetric(vertical: 100)),
@@ -170,7 +172,7 @@ class _Page1State extends State<Page1> {
                   ),
                 ),
               ],
-            ),
+            )) ,),
           )
         ],
       ),
