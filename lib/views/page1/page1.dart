@@ -21,7 +21,7 @@ class _Page1State extends State<Page1> {
       "https://faefolk.nyc3.cdn.digitaloceanspaces.com/Media/Videos/overworld.mov";
   String cave =
       "https://faefolk.nyc3.cdn.digitaloceanspaces.com/Media/Videos/cave.mp4";
-  String textLogo = "https://faefolk.nyc3.cdn.digitaloceanspaces.com/Media/Images/text_logo.png";
+  String textLogo = "images/text_logo.png";
 
   @override
   void initState() {
@@ -130,7 +130,7 @@ class _Page1State extends State<Page1> {
                 SizedBox(
                   width: 600,
                   child: Image(
-                  image: NetworkImage(textLogo),
+                  image: AssetImage(textLogo),
                   fit: BoxFit.fill,
                 ),),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 50)),
