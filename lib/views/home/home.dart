@@ -11,8 +11,8 @@ class Home extends StatelessWidget {
     return SingleChildScrollView(
         child: Column(children: const[
           Page1(),
-          Page2(),
-          Page3()
+          //Page2(),
+          //Page3()
         ],),
       );
   }

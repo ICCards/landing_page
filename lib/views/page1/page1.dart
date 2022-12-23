@@ -150,6 +150,7 @@ class _Page1State extends State<Page1> {
                 const Padding(padding: EdgeInsets.symmetric(vertical: 25)),
                 SizedBox(
                   height: 70,
+                  width: 300,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       shadowColor: secondaryColor,
@@ -160,7 +161,8 @@ class _Page1State extends State<Page1> {
                       downloadFile(getGameLink());
                     },
                     child: Row(
-                      mainAxisSize: MainAxisSize.min,
+                      //mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: const [
                         Text(
                           'Play Now',
@@ -169,9 +171,9 @@ class _Page1State extends State<Page1> {
                               fontWeight: FontWeight.w600,
                               color: Colors.white),
                         ), // <-- Text
-                        SizedBox(
+                        /*SizedBox(
                           width: 5,
-                        ),
+                        ),*/
                         Icon(
                           // <-- Icon
                           Icons.videogame_asset,
