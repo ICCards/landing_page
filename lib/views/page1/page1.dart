@@ -177,7 +177,7 @@ class _Page1State extends State<Page1> {
                         Icon(
                           // <-- Icon
                           Icons.videogame_asset,
-                          size: 45.0,
+                          size: 40.0,
                           color: Colors.white,
                         ),
                       ],
