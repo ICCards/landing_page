@@ -75,8 +75,8 @@ class _Page1State extends State<Page1> {
               children: [
                 const Padding(padding: EdgeInsets.only(left: 50)),
                 SizedBox(
-                  width: 50,
-                  height: 50,
+                  width: 80,
+                  height: 80,
                   child: Image(
                   image: NetworkImage(logo),
                   fit: BoxFit.fill,
