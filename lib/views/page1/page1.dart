@@ -23,6 +23,7 @@ class _Page1State extends State<Page1> {
   String cave =
       "https://faefolk.nyc3.cdn.digitaloceanspaces.com/Media/Videos/cave.mp4";
   String textLogo = "https://faefolk.nyc3.cdn.digitaloceanspaces.com/Media/Images/text_logo.png";
+  String logo = "https://faefolk.nyc3.cdn.digitaloceanspaces.com/Media/Images/logo.png";
 
   @override
   void initState() {
@@ -72,6 +73,15 @@ class _Page1State extends State<Page1> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                const Padding(padding: EdgeInsets.only(left: 50)),
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: Image(
+                  image: NetworkImage(logo),
+                  fit: BoxFit.fill,
+                ),),
+                const Spacer(),
                 Container(
                   decoration: BoxDecoration(
                       color: thirdColor,
@@ -125,7 +135,6 @@ class _Page1State extends State<Page1> {
           Center(
             child: SizedBox(
               child:Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Padding(padding: EdgeInsets.symmetric(vertical: 100)),
                 SizedBox(
